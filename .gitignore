@@ -1,48 +1,29 @@
-# Wordpress - ignore core, configuration, examples, uploads and logs.
-# https://github.com/github/gitignore/blob/main/WordPress.gitignore
+# Ignore everything by default
+*
 
-# Core
-#
-# Note: if you want to stage/commit WP core files
-# you can delete this whole section/until Configuration.
-/wp-admin/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php
+# Allow these files and folders explicitly
+!.gitignore
+!.gitattributes
+!wp-config.php
+!docker-compose.yml
+!Dockerfile
+!Dockerfile.db
+!README.md
 
-# Configuration
-wp-config.php
+# Allow SQL init folder and zip
+!sql/
+!sql/init.zip
+!sql/init.sql
 
-# Example themes
-/wp-content/themes/twenty*/
+# Allow WordPress content directories
+!wp-content-en/
+!wp-content-en/**
+!wp-content-dz/
+!wp-content-dz/**
 
-# Example plugin
-/wp-content/plugins/hello.php
-
-# Uploads
-/wp-content/uploads/
-
-# Log files
-*.log
-
-# htaccess
-/.htaccess
-
-# All plugins
-#
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#/wp-content/plugins
-
-# All themes
-#
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#/wp-content/themes
+# Exclude common WordPress temporary or sensitive files
+wp-content*/cache/
+wp-content*/upgrade/
+wp-content*/uploads/cache/
+wp-content*/backup*/
+wp-content*/debug.log

@@ -1,0 +1,56 @@
+<?php 
+if (in_category('events')) {
+    include(locate_template('single-events.php'));
+} else {
+?>
+<?php get_header(); ?>
+
+<?php include('inc/page-header.php'); ?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+<section class="th-blog-wrapper blog-details space-top space-extra2-bottom">
+    <div class="container">
+        <div class="row gx-30">
+            <div class="col-xxl-8 col-lg-7">
+                <div class="th-blog blog-single">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <a class="author" href="#"><i class="far fa-user"></i>by <?php the_author(); ?></a>
+                            <a href="#"><i class="fa-light fa-calendar-days"></i><?php echo the_time('F, jS,Y') ?></a>
+                            
+                        </div>
+                        <h2 class="blog-title"><?php the_title(); ?></h2>
+                        <?php the_content(); ?>
+                    </div>
+                    <div class="share-links clearfix ">
+                        <div class="row justify-content-between">
+                            <div class="col-md-auto">
+                                <span class="share-links-title">Tags:</span>
+                                <div class="tagcloud">
+                                    <?php foreach(get_the_category() as $category): ?>
+                                    <a href="<?php echo get_category_link($category->cat_ID); ?>">
+                                        <?php echo $category->cat_name; ?>
+                                    </a>
+                                <?php endforeach; ?>
+                                </div>
+                            </div>
+                            <div class="col-md-auto text-xl-end">
+                                <span class="share-links-title">Share:</span>
+                                <ul class="social-links">
+                                    <li><a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                </ul><!-- End Social Share -->
+                            </div><!-- Share Links Area end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php get_sidebar(); ?>
+        </div>
+    </div>
+</section>
+
+<?php endwhile; endif; ?>
+<?php get_footer(); }?>

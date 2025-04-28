@@ -1,0 +1,184 @@
+/*
+Theme Name: TTI Bhutan
+Theme URI: https://www.ttit.edu.bt/
+Author: SAMU
+Author URI: https://www.samu.bt/
+Description: Theme for TTi Thimphu developed by SAMU
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: tti-thimphu
+*/
+
+@font-face {
+    font-family: "Uchen";
+    src:url(./assets/fonts/DDC_Uchen.ttf);
+	
+}
+
+@font-face {
+    font-family: "Dzongkha";
+    src:url(./assets/fonts/dzongkha_calligraphic.ttf);
+}
+
+.font-dzo {
+    font-family: "Dzongkha",Sora;
+}
+
+.font-uchen {
+    font-family: "Uchen",Sora;
+}
+
+.br-10 {
+    border-radius: 10px!important;
+}
+
+.blog-tti-box {
+    border: 1px solid #eee;
+    box-shadow: 0px 7px 14px 0px rgba(234, 237, 242, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.h-100 {
+    height: 100%!important;
+}
+
+.h-130px {
+    height: 130px!important;
+}
+.h-300px {
+    height: 300px!important;
+}
+
+.mt-211 {
+    margin-top: -211px!important;
+    /* margin-bottom: 5rem; */
+}
+
+@media (max-width: 1199px) {
+    .mt-211 {
+      margin-top: 20px!important;
+    }
+  }
+
+/* Ken Burns effect for background images */
+@keyframes kenBurns {
+    0% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.ken-burns-bg {
+    /* position: relative; */
+    /* background-size: cover; */
+    background-position: center;
+    /* transform: scale(1);
+    -webkit-transition: kenBurns 15s ease-out 0s;
+    -moz-transition: kenBurns 15s ease-out 0s;
+    -ms-transition: kenBurns 15s ease-out 0s;
+    -o-transition: kenBurns 15s ease-out 0s;
+    transition: kenBurns 15s ease-out 0s; */
+    animation: kenBurns 15s ease-out infinite;
+}
+
+
+/* Ken Burns effect for background images */
+@keyframes kenBurnsLoading {
+    0% {
+        transform: scale(1); /* Initial scale */
+    }
+    100% {
+        transform: scale(1.2); /* Final scale */
+    }
+}
+
+/* Apply the Ken Burns effect only during loading */
+.ken-burns-bg {
+    /* position: relative; */
+    background-size: cover;
+    background-position: center;
+    transition: background-size 0.5s ease-in-out;
+    animation: kenBurnsLoading 9s ease-out infinite; /* Apply the animation */
+}
+
+/* Ken Burns Effect */
+
+.ttib-image {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 16s;
+    transform: scale(1.2);
+}
+
+.ttib-image:nth-child(1) {
+    animation-name: kenburns-1;
+    z-index: 3;
+}
+.ttib-image:nth-child(2) {
+    animation-name: kenburns-2;
+    z-index: 2;
+}
+.ttib-image:nth-child(3) {
+    animation-name: kenburns-3;
+    z-index: 1;
+}
+
+@keyframes kenburns-1 {
+    0% {
+    	opacity: 0;
+    }
+    5% {
+    	opacity: 1;
+    }
+    95% {
+    	transform: scale3d(1.2, 1.2, 1.2) translate3d(69px, -2px, 0px);
+    	animation-timing-function: ease-in;
+    	opacity: 1;
+    }
+    100% {
+    	transform: scale3d(1.7, 1.7, 1.7) translate3d(-11px, -12px, 0px);
+    	opacity: 0;
+    }
+}
+
+@keyframes kenburns-2 {
+    0% {
+    	opacity: 0;
+    }
+    5% {
+    	opacity: 1;
+    }
+    95% {
+    	transform: scale3d(1.2, 1.2, 1.2) translate3d(69px, -2px, 0px);
+    	animation-timing-function: ease-in;
+    	opacity: 1;
+    }
+    100% {
+    	transform: scale3d(1.7, 1.7, 1.7) translate3d(-11px, -12px, 0px);
+    	opacity: 0;
+    }
+}
+
+@keyframes kenburns-3 {
+    0% {
+    	opacity: 0;
+    }
+    5% {
+    	opacity: 1;
+    }
+    95% {
+    	transform: scale3d(1.2, 1.2, 1.2) translate3d(69px, -2px, 0px);
+    	animation-timing-function: ease-in;
+    	opacity: 1;
+    }
+    100% {
+    	transform: scale3d(1.7, 1.7, 1.7) translate3d(-11px, -12px, 0px);
+    	opacity: 0;
+    }
+}
+
+
