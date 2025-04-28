@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  wordpress_en:
+    image: 'ghcr.io/samubhutan/govtech_czc_wordpress:latest'
+    environment:
+      - WORDPRESS_TABLE_PREFIX=tti_bt_
+      - WORDPRESS_DB_HOST=db
+      - WORDPRESS_DB_NAME=czc
+      - WORDPRESS_DB_PASSWORD=czc_dockerized_db_pw#881
+      - WORDPRESS_DB_USER=czc
+      - "WORDPRESS_CONFIG_EXTRA=define('WP_HOME','https://czc.samu.bt');define('WP_SITEURL','https://czc.samu.bt');"
+    depends_on:
+      - db
+    volumes:
+      - wordpress_data_czc_en:/var/www/html/wp-content
+  db:
+    image: 'ghcr.io/samubhutan/govtech_czc_mariadb:latest'
+    volumes:
+      - mariadb_data_czc:/var/lib/mysql
+    environment:
+      - MARIADB_DATABASE=czc
+      - MARIADB_PASSWORD=czc_dockerized_db_pw#881
+      - MARIADB_ROOT_PASSWORD=czc_dockerized_db_pw_for_root#881
+      - MARIADB_USER=czc
+
+volumes:
+  mariadb_data_czc: null
+  wordpress_data_czc_en: null
+  wordpress_data_czc_dz: null

@@ -5,7 +5,7 @@
 !.gitignore
 !.gitattributes
 !wp-config.php
-!docker-compose.yml
+!docker-compose.yaml
 !Dockerfile
 !Dockerfile.db
 !README.md
