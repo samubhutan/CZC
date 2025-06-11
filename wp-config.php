@@ -38,9 +38,9 @@ error_log('Processing request URI: ' . $request_uri);
 
 if (strpos($request_uri, '/dz') === 0) {
     $table_prefix = 'tti_bt_';
-    define('WP_HOME', 'https://czc.samu.bt/dz');
-    define('WP_SITEURL', 'https://czc.samu.bt/dz');
-    define('WP_CONTENT_URL', 'https://czc.samu.bt/dz/wp-content');
+    define('WP_HOME', 'https://czc.edu.gov.bt/dz');
+    define('WP_SITEURL', 'https://czc.edu.gov.bt/dz');
+    define('WP_CONTENT_URL', 'https://czc.edu.gov.bt/dz/wp-content');
     define('WP_CONTENT_DIR', '/var/www/html/dz/wp-content');
     define('WP_SITE_COOKIE_PATH', '/dz/');
     define('COOKIEPATH', '/dz/');
@@ -49,8 +49,8 @@ if (strpos($request_uri, '/dz') === 0) {
 } else {
     error_log('Using root configuration');
     $table_prefix = 'tti_bt_';
-    define('WP_HOME', 'https://czc.samu.bt');
-    define('WP_SITEURL', 'https://czc.samu.bt');
+    define('WP_HOME', 'https://czc.edu.gov.bt');
+    define('WP_SITEURL', 'https://czc.edu.gov.bt');
     define('WP_SITE_COOKIE_PATH', '/');
     define('COOKIEPATH', '/');
     define('SITECOOKIEPATH', '/');
